@@ -424,13 +424,31 @@ select:disabled {
     cursor: not-allowed;
 }
 
+/* ============================================================
+   RESULT CARD TEXT SIZE (Option 1)
+   ============================================================ */
+
+.region-card h3,
+.dateposted-card h3,
+.industry-card h3 {
+    font-size: 0.9rem;   /* adjust smaller or larger as needed */
+    margin: 4px 0;
+}
+
+.region-card h3 a,
+.dateposted-card h3 a,
+.industry-card h3 a {
+    font-size: inherit;  /* ensures link matches the h3 size */
+}
+
+
 /* PHOTOS */
 /* Space between menu and photo */
 main {
     padding-top: 2rem; /* adjust if needed */
 }
 
-/* Footer */
+/* FOOTER */
 .site-footer {
     text-align: center;
     padding: 2rem 1rem;

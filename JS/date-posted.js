@@ -7,7 +7,11 @@ import {
     resetDependentDropdowns,
     attachDropdownListener,
     renderNoResults,
-    renderError
+    renderError,
+    allRegions, // not used here but imported by pattern
+    initRegions, // not used here but imported by pattern
+    allJobsByDate,
+    initJobsByDate
 } from "./main.js";
 
 import { getJobsByDate } from "./api.js";
@@ -19,7 +23,8 @@ const typeSelect = document.getElementById("typeSelect");
 const resultsContainer = document.getElementById("results");
 
 // Load initial data when page loads
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+    await initJobsByDate(getJobsByDate); // NEW: load full dataset once
     loadDateOptions();
     setupListeners();
 });
@@ -40,10 +45,13 @@ function loadDateOptions() {
 // ---------------------------------------------
 // STEP 2: Load Scales for Selected Date Range
 // ---------------------------------------------
-async function loadScales(dateRange) {
+function loadScales(dateRange) {
     try {
-        const data = await getJobsByDate({ DatePosted: dateRange });
-        const scales = [...new Set(data.map(item => item.Scale))].sort();
+        const scales = [...new Set(
+            allJobsByDate
+                .filter(item => item.DatePosted === dateRange)
+                .map(item => item.Scale)
+        )].sort();
 
         populateDropdown(scaleSelect, scales, "Select Scale");
     } catch (err) {
@@ -54,10 +62,16 @@ async function loadScales(dateRange) {
 // ---------------------------------------------
 // STEP 3: Load Types for Selected Scale
 // ---------------------------------------------
-async function loadTypes(dateRange, scale) {
+function loadTypes(dateRange, scale) {
     try {
-        const data = await getJobsByDate({ DatePosted: dateRange, Scale: scale });
-        const types = [...new Set(data.map(item => item.Type))].sort();
+        const types = [...new Set(
+            allJobsByDate
+                .filter(item =>
+                    item.DatePosted === dateRange &&
+                    item.Scale === scale
+                )
+                .map(item => item.Type)
+        )].sort();
 
         populateDropdown(typeSelect, types, "Select Type");
     } catch (err) {
@@ -67,31 +81,21 @@ async function loadTypes(dateRange, scale) {
 
 // ---------------------------------------------
 // STEP 4: Load Results for Selected Type
-// (Corrected to match Industries.js pattern)
 // ---------------------------------------------
-async function loadResults(dateRange, scale, type) {
+function loadResults(dateRange, scale, type) {
     try {
-        const data = await getJobsByDate({
-            DatePosted: dateRange,
-            Scale: scale,
-            Type: type
-        });
-
-        // If no results at all
-        if (!data || data.length === 0) {
-            resultsContainer.innerHTML = `<p>No Employers Shown At This Time</p>`;
-            return;
-        }
-
-        // Filter out rows with no employer name
-        const employers = data.filter(item => item.EmployerName);
+        const employers = allJobsByDate.filter(item =>
+            item.DatePosted === dateRange &&
+            item.Scale === scale &&
+            item.Type === type &&
+            item.EmployerName
+        );
 
         if (employers.length === 0) {
             resultsContainer.innerHTML = `<p>No Employers Shown At This Time</p>`;
             return;
         }
 
-        // Render only EmployerName + EmployerLink
         resultsContainer.innerHTML = employers
             .map(item => {
                 const name = item.EmployerName;

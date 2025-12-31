@@ -2,22 +2,56 @@
 // MAIN.JS — Shared Frontend Utilities
 // ===============================
 
-// -------------------------------
-// Dropdown Helpers
-// -------------------------------
+// ---------------------------------------------
+// GLOBAL DATA CACHES (Option A — Full Dataset Caching)
+// ---------------------------------------------
 
-// Populate a dropdown with items
+// Regions dataset
+export let allRegions = [];
+export async function initRegions(getRegionsFunction) {
+    try {
+        allRegions = await getRegionsFunction();
+        console.log("Full Regions dataset loaded:", allRegions.length, "rows");
+    } catch (err) {
+        console.error("Failed to load Regions dataset:", err);
+    }
+}
+
+// Jobs-by-date dataset
+export let allJobsByDate = [];
+export async function initJobsByDate(getJobsByDateFunction) {
+    try {
+        allJobsByDate = await getJobsByDateFunction();
+        console.log("Full Jobs-by-Date dataset loaded:", allJobsByDate.length, "rows");
+    } catch (err) {
+        console.error("Failed to load Jobs-by-Date dataset:", err);
+    }
+}
+
+// Industries dataset
+export let allIndustries = [];
+export async function initIndustries(getIndustriesFunction) {
+    try {
+        allIndustries = await getIndustriesFunction();
+        console.log("Full Industries dataset loaded:", allIndustries.length, "rows");
+    } catch (err) {
+        console.error("Failed to load Industries dataset:", err);
+    }
+}
+
+// ===============================
+// DROPDOWN HELPERS
+// ===============================
+
 export function populateDropdown(selectElement, items, placeholder = "Select an option") {
     clearDropdown(selectElement);
     enableDropdown(selectElement);
 
-    // Add placeholder
     const defaultOption = document.createElement("option");
     defaultOption.value = "";
     defaultOption.textContent = placeholder;
     selectElement.appendChild(defaultOption);
 
-    // Add items
     items.forEach(item => {
         const option = document.createElement("option");
         option.value = item;
@@ -26,22 +60,18 @@ export function populateDropdown(selectElement, items, placeholder = "Select an 
     });
 }
 
-// Clear all options from a dropdown
 export function clearDropdown(selectElement) {
     selectElement.innerHTML = "";
 }
 
-// Disable a dropdown
 export function disableDropdown(selectElement) {
     selectElement.disabled = true;
 }
 
-// Enable a dropdown
 export function enableDropdown(selectElement) {
     selectElement.disabled = false;
 }
 
-// Reset multiple dropdowns at once
 export function resetDependentDropdowns(dropdowns) {
     dropdowns.forEach(select => {
         clearDropdown(select);
@@ -49,7 +79,6 @@ export function resetDependentDropdowns(dropdowns) {
     });
 }
 
-// Attach a listener to a dropdown
 export function attachDropdownListener(selectElement, callback) {
     selectElement.addEventListener("change", () => {
         const value = selectElement.value;
@@ -57,9 +86,9 @@ export function attachDropdownListener(selectElement, callback) {
     });
 }
 
-// -------------------------------
-// Rendering Helpers
-// -------------------------------
+// ===============================
+// RENDERING HELPERS
+// ===============================
 
 export function renderNoResults(container) {
     container.innerHTML = `<p>No results found.</p>`;

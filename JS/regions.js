@@ -7,7 +7,9 @@ import {
     resetDependentDropdowns,
     attachDropdownListener,
     renderNoResults,
-    renderError
+    renderError,
+    allRegions,
+    initRegions
 } from "./main.js";
 
 import { getRegions } from "./api.js";
@@ -20,19 +22,18 @@ const typeSelect = document.getElementById("typeSelect");
 const resultsContainer = document.getElementById("results");
 
 // Load initial data when page loads
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+    await initRegions(getRegions); // NEW: load full dataset once
     loadStates();
     setupListeners();
 });
 
 // ---------------------------------------------
-// STEP 1: Load States
+// STEP 1: Load States (local filtering)
 // ---------------------------------------------
-async function loadStates() {
+function loadStates() {
     try {
-        const data = await getRegions(); // fetch all regions
-        const states = [...new Set(data.map(item => item.State))].sort();
-
+        const states = [...new Set(allRegions.map(item => item.State))].sort();
         populateDropdown(stateSelect, states, "Select a State");
     } catch (err) {
         renderError(resultsContainer, "Failed to load states.");
@@ -42,10 +43,13 @@ async function loadStates() {
 // ---------------------------------------------
 // STEP 2: Load Cities for Selected State
 // ---------------------------------------------
-async function loadCities(state) {
+function loadCities(state) {
     try {
-        const data = await getRegions({ state });
-        const cities = [...new Set(data.map(item => item.City_Town_Other))].sort();
+        const cities = [...new Set(
+            allRegions
+                .filter(item => item.State === state)
+                .map(item => item.City_Town_Other)
+        )].sort();
 
         populateDropdown(citySelect, cities, "Select a City");
     } catch (err) {
@@ -56,10 +60,16 @@ async function loadCities(state) {
 // ---------------------------------------------
 // STEP 3: Load Scales for Selected City
 // ---------------------------------------------
-async function loadScales(state, city) {
+function loadScales(state, city) {
     try {
-        const data = await getRegions({ state, city });
-        const scales = [...new Set(data.map(item => item.Scale))].sort();
+        const scales = [...new Set(
+            allRegions
+                .filter(item =>
+                    item.State === state &&
+                    item.City_Town_Other === city
+                )
+                .map(item => item.Scale)
+        )].sort();
 
         populateDropdown(scaleSelect, scales, "Select Scale");
     } catch (err) {
@@ -70,10 +80,17 @@ async function loadScales(state, city) {
 // ---------------------------------------------
 // STEP 4: Load Types for Selected Scale
 // ---------------------------------------------
-async function loadTypes(state, city, scale) {
+function loadTypes(state, city, scale) {
     try {
-        const data = await getRegions({ state, city, scale });
-        const types = [...new Set(data.map(item => item.Type))].sort();
+        const types = [...new Set(
+            allRegions
+                .filter(item =>
+                    item.State === state &&
+                    item.City_Town_Other === city &&
+                    item.Scale === scale
+                )
+                .map(item => item.Type)
+        )].sort();
 
         populateDropdown(typeSelect, types, "Select Type");
     } catch (err) {
@@ -84,25 +101,21 @@ async function loadTypes(state, city, scale) {
 // ---------------------------------------------
 // STEP 5: Load Results for Selected Type
 // ---------------------------------------------
-async function loadResults(state, city, scale, type) {
+function loadResults(state, city, scale, type) {
     try {
-        const data = await getRegions({ state, city, scale, type });
-
-        // If no employers found
-        if (!data || data.length === 0) {
-            resultsContainer.innerHTML = `<p>No Employers Shown At This Time</p>`;
-            return;
-        }
-
-        // Filter out rows with no employer name
-        const employers = data.filter(item => item.EmployerName);
+        const employers = allRegions.filter(item =>
+            item.State === state &&
+            item.City_Town_Other === city &&
+            item.Scale === scale &&
+            item.Type === type &&
+            item.EmployerName
+        );
 
         if (employers.length === 0) {
             resultsContainer.innerHTML = `<p>No Employers Shown At This Time</p>`;
             return;
         }
 
-        // Render only EmployerName + EmployerLink
         resultsContainer.innerHTML = employers
             .map(item => {
                 const name = item.EmployerName;
@@ -126,7 +139,6 @@ async function loadResults(state, city, scale, type) {
         renderError(resultsContainer, "Failed to load results.");
     }
 }
-
 
 // ---------------------------------------------
 // EVENT LISTENERS

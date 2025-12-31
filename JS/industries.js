@@ -7,7 +7,9 @@ import {
     resetDependentDropdowns,
     attachDropdownListener,
     renderNoResults,
-    renderError
+    renderError,
+    allIndustries,
+    initIndustries
 } from "./main.js";
 
 import { getIndustries } from "./api.js";
@@ -20,18 +22,20 @@ const typeSelect = document.getElementById("typeSelect");
 const resultsContainer = document.getElementById("results");
 
 // Load initial data when page loads
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+    await initIndustries(getIndustries); // NEW: load full dataset once
     loadIndustries();
     setupListeners();
 });
 
 // ---------------------------------------------
-// STEP 1: Load Industries
+// STEP 1: Load Industries (local filtering)
 // ---------------------------------------------
-async function loadIndustries() {
+function loadIndustries() {
     try {
-        const data = await getIndustries();
-        const industries = [...new Set(data.map(item => item.Industry))].sort();
+        const industries = [...new Set(
+            allIndustries.map(item => item.Industry)
+        )].sort();
 
         populateDropdown(industrySelect, industries, "Select an Industry");
     } catch (err) {
@@ -42,10 +46,13 @@ async function loadIndustries() {
 // ---------------------------------------------
 // STEP 2: Load Subindustries for Selected Industry
 // ---------------------------------------------
-async function loadSubindustries(industry) {
+function loadSubindustries(industry) {
     try {
-        const data = await getIndustries({ Industry: industry });
-        const subindustries = [...new Set(data.map(item => item.Subindustry))].sort();
+        const subindustries = [...new Set(
+            allIndustries
+                .filter(item => item.Industry === industry)
+                .map(item => item.Subindustry)
+        )].sort();
 
         populateDropdown(subindustrySelect, subindustries, "Select a Subindustry");
     } catch (err) {
@@ -56,10 +63,16 @@ async function loadSubindustries(industry) {
 // ---------------------------------------------
 // STEP 3: Load Scales for Selected Subindustry
 // ---------------------------------------------
-async function loadScales(industry, subindustry) {
+function loadScales(industry, subindustry) {
     try {
-        const data = await getIndustries({ Industry: industry, Subindustry: subindustry });
-        const scales = [...new Set(data.map(item => item.Scale))].sort();
+        const scales = [...new Set(
+            allIndustries
+                .filter(item =>
+                    item.Industry === industry &&
+                    item.Subindustry === subindustry
+                )
+                .map(item => item.Scale)
+        )].sort();
 
         populateDropdown(scaleSelect, scales, "Select Scale");
     } catch (err) {
@@ -70,14 +83,17 @@ async function loadScales(industry, subindustry) {
 // ---------------------------------------------
 // STEP 4: Load Types for Selected Scale
 // ---------------------------------------------
-async function loadTypes(industry, subindustry, scale) {
+function loadTypes(industry, subindustry, scale) {
     try {
-        const data = await getIndustries({
-            Industry: industry,
-            Subindustry: subindustry,
-            Scale: scale
-        });
-        const types = [...new Set(data.map(item => item.Type))].sort();
+        const types = [...new Set(
+            allIndustries
+                .filter(item =>
+                    item.Industry === industry &&
+                    item.Subindustry === subindustry &&
+                    item.Scale === scale
+                )
+                .map(item => item.Type)
+        )].sort();
 
         populateDropdown(typeSelect, types, "Select Type");
     } catch (err) {
@@ -88,21 +104,15 @@ async function loadTypes(industry, subindustry, scale) {
 // ---------------------------------------------
 // STEP 5: Load Results for Selected Type
 // ---------------------------------------------
-async function loadResults(industry, subindustry, scale, type) {
+function loadResults(industry, subindustry, scale, type) {
     try {
-        const data = await getIndustries({
-            Industry: industry,
-            Subindustry: subindustry,
-            Scale: scale,
-            Type: type
-        });
-
-        if (!data || data.length === 0) {
-            resultsContainer.innerHTML = `<p>No Employers Shown At This Time</p>`;
-            return;
-        }
-
-        const employers = data.filter(item => item.EmployerName);
+        const employers = allIndustries.filter(item =>
+            item.Industry === industry &&
+            item.Subindustry === subindustry &&
+            item.Scale === scale &&
+            item.Type === type &&
+            item.EmployerName
+        );
 
         if (employers.length === 0) {
             resultsContainer.innerHTML = `<p>No Employers Shown At This Time</p>`;
