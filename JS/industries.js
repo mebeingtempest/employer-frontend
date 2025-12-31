@@ -23,7 +23,7 @@ const resultsContainer = document.getElementById("results");
 
 // Load initial data when page loads
 document.addEventListener("DOMContentLoaded", async () => {
-    await initIndustries(getIndustries); // NEW: load full dataset once
+    await initIndustries(); // NEW: load full dataset once
     loadIndustries();
     setupListeners();
 });

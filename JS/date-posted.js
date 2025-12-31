@@ -8,8 +8,6 @@ import {
     attachDropdownListener,
     renderNoResults,
     renderError,
-    allRegions, // not used here but imported by pattern
-    initRegions, // not used here but imported by pattern
     allJobsByDate,
     initJobsByDate
 } from "./main.js";
@@ -24,7 +22,7 @@ const resultsContainer = document.getElementById("results");
 
 // Load initial data when page loads
 document.addEventListener("DOMContentLoaded", async () => {
-    await initJobsByDate(getJobsByDate); // NEW: load full dataset once
+    await initJobsByDate(); // NEW: load full dataset once
     loadDateOptions();
     setupListeners();
 });

@@ -3,14 +3,15 @@
 // ===============================
 
 // ---------------------------------------------
-// GLOBAL DATA CACHES (Option A — Full Dataset Caching)
+// GLOBAL DATA CACHES — Now using static JSON files
 // ---------------------------------------------
 
 // Regions dataset
 export let allRegions = [];
-export async function initRegions(getRegionsFunction) {
+export async function initRegions() {
     try {
-        allRegions = await getRegionsFunction();
+        const res = await fetch('/regionsdata.json');
+        allRegions = await res.json();
         console.log("Full Regions dataset loaded:", allRegions.length, "rows");
     } catch (err) {
         console.error("Failed to load Regions dataset:", err);
@@ -19,9 +20,10 @@ export async function initRegions(getRegionsFunction) {
 
 // Jobs-by-date dataset
 export let allJobsByDate = [];
-export async function initJobsByDate(getJobsByDateFunction) {
+export async function initJobsByDate() {
     try {
-        allJobsByDate = await getJobsByDateFunction();
+        const res = await fetch('/dateposteddata.json');
+        allJobsByDate = await res.json();
         console.log("Full Jobs-by-Date dataset loaded:", allJobsByDate.length, "rows");
     } catch (err) {
         console.error("Failed to load Jobs-by-Date dataset:", err);
@@ -30,9 +32,10 @@ export async function initJobsByDate(getJobsByDateFunction) {
 
 // Industries dataset
 export let allIndustries = [];
-export async function initIndustries(getIndustriesFunction) {
+export async function initIndustries() {
     try {
-        allIndustries = await getIndustriesFunction();
+        const res = await fetch('/industriesdata.json');
+        allIndustries = await res.json();
         console.log("Full Industries dataset loaded:", allIndustries.length, "rows");
     } catch (err) {
         console.error("Failed to load Industries dataset:", err);
