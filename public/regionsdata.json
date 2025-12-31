@@ -1,42 +1,42 @@
 [
   {
+    "ID": 1,
+    "State": "Arizona",
     "City_Town_Other": "Bullhead City",
     "EmployerLink": null,
     "EmployerName": null,
-    "ID": 1,
-    "Population": null,
     "Scale": "State Business",
-    "State": "Arizona",
-    "Type": "Permanent"
+    "Type": "Permanent",
+    "Population": null
   },
   {
+    "ID": 2,
+    "State": "Alabama",
     "City_Town_Other": "Birmingham",
     "EmployerLink": null,
     "EmployerName": null,
-    "ID": 2,
-    "Population": null,
     "Scale": "National Business",
-    "State": "Alabama",
-    "Type": "Permanent"
+    "Type": "Permanent",
+    "Population": null
   },
   {
+    "ID": 3,
+    "State": "Alabama",
     "City_Town_Other": "Birmingham",
     "EmployerLink": "https://amazon.com",
     "EmployerName": "Amazon",
-    "ID": 3,
-    "Population": null,
     "Scale": "National Business",
-    "State": "Alabama",
-    "Type": "Permanent"
+    "Type": "Permanent",
+    "Population": null
   },
   {
+    "ID": 4,
+    "State": "Alabama",
     "City_Town_Other": "Birmingham",
     "EmployerLink": "https://selfary.us",
     "EmployerName": "Selfary",
-    "ID": 4,
-    "Population": null,
     "Scale": "National Business",
-    "State": "Alabama",
-    "Type": "Permanent"
+    "Type": "Permanent",
+    "Population": null
   }
 ]

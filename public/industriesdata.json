@@ -1,42 +1,20 @@
 [
   {
-    "City_Town_Other": "Bullhead City",
-    "EmployerLink": null,
-    "EmployerName": null,
     "ID": 1,
-    "Population": null,
-    "Scale": "State Business",
-    "State": "Arizona",
-    "Type": "Permanent"
-  },
-  {
-    "City_Town_Other": "Birmingham",
+    "Industry": "Engineering",
+    "Subindustry": "Software",
     "EmployerLink": null,
     "EmployerName": null,
+    "Scale": "National Business",
+    "Type": "Permanent"
+  },
+  {
     "ID": 2,
-    "Population": null,
+    "Industry": "Administration",
+    "Subindustry": "Office",
+    "EmployerLink": null,
+    "EmployerName": null,
     "Scale": "National Business",
-    "State": "Alabama",
-    "Type": "Permanent"
-  },
-  {
-    "City_Town_Other": "Birmingham",
-    "EmployerLink": "https://amazon.com",
-    "EmployerName": "Amazon",
-    "ID": 3,
-    "Population": null,
-    "Scale": "National Business",
-    "State": "Alabama",
-    "Type": "Permanent"
-  },
-  {
-    "City_Town_Other": "Birmingham",
-    "EmployerLink": "https://selfary.us",
-    "EmployerName": "Selfary",
-    "ID": 4,
-    "Population": null,
-    "Scale": "National Business",
-    "State": "Alabama",
     "Type": "Permanent"
   }
 ]
