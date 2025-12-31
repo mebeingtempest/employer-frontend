@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- ===========================
+         META & PAGE SETTINGS
+    ============================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ===========================
+         PAGE TITLE
+    ============================ -->
+    <title>About</title>
+
+    <!-- ===========================
+         STYLESHEETS
+    ============================ -->
+    <link rel="stylesheet" href="CSS/style.css">
+
+</head>
+<body>
+
+<!-- ===========================
+     SITE HEADER
+============================ -->
+<header class="site-header">
+    <div class="site-header-inner">
+
+        <!-- Logo (clickable, links to home) -->
+        <div class="site-title">
+            <a href="index.html">
+                <img src="IMAGES/logo.png" alt="Selfary logo" class="site-logo">
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="site-nav">
+
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle" aria-label="Open menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 7.5h16v1.5H4z"></path>
+                    <path d="M4 15h16v1.5H4z"></path>
+                </svg>
+            </button>
+
+            <!-- Main Menu -->
+            <ul class="nav-menu">
+                <!-- Home removed -->
+                <li><a href="about.html">About</a></li>
+
+                <!-- Submenu -->
+                <li class="has-submenu">
+
+                    <!-- Parent label (no longer a link) -->
+                    <span class="submenu-label">Employer Search</span>
+
+                    <!-- Arrow toggle button -->
+                    <button class="submenu-toggle" aria-label="Toggle submenu">
+                        <svg width="12" height="12" viewBox="0 0 12 12">
+                            <path d="M1.5 4L6 8l4.5-4"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown submenu -->
+                    <ul class="submenu">
+                        <li><a href="region-search-page.html">Region Search Page</a></li>
+                        <li><a href="industry-search-page.html">Industry Search Page</a></li>
+                        <li><a href="date-posted-search-page.html">Date Posted Search Page</a></li>
+                    </ul>
+
+                </li>
+
+                <li><a href="hiring-ethics-articles.html">Hiring Ethics Articles</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- ===========================
+     MAIN CONTENT
+============================ -->
+<main id="main">
+    <div class="content">
+
+        <!-- Page Heading --> 
+        <h2 class="about-heading">I'm Tempest</h2>
+
+        <!-- About Photo -->
+        <figure class="about-photo">
+            <img src="IMAGES/about_photo.jpg" alt="About page photo">
+        </figure>
+
+        <!-- About Text -->
+
+        <p>I created Selfary to be a non-profit caring about changing the robotic hiring practices online that have caused the personal touch of hiring to be lost because everything is automated and behind computer screens.</p>
+
+        <p>I have years of experience in Human Resources, working with HRIS implementation, data analysis, administration, training, and onboarding/recruiting. I started with Human Resources when I was 19 years old and continue to do this work outside of this non-profit as well.</p>
+
+        <p>I also have experience with understanding how hiring processes within businesses – big and small – are affecting everyday people because of the carelessness of people’s time and experiences. This then causes carelessness on the employee’s end because of businesses carelessness to begin with. And the cycle repeats.</p>
+
+        <p>This is not sustainable ethically. Humanity will be lost due to carelessness, which turns into purposeless and worthlessness, <strong>unless</strong> a shift starts happening. Big time. </p>
+
+        <p>My purpose with Selfary is to lead people to work towards shifting our online hiring practices from carelessness to care. With that in mind, I created this business as a non-profit because of the unethical aspects of non-profits themselves too. To read articles that are about experiences and ethics regarding hiring practices, including business expenditures, feel free to view the Hiring Ethics articles.</p>
+
+        <p>You can also view my podcast on <a href="https://www.youtube.com/@selfary">YouTube</a> about interpretation of hiring processes. </p>
+        
+        <p>Email: <a href="mailto:mebeingtempest@yahoo.com">Contact Tempest</a>  - Responses sent through email will be answered within 1-2 business days and I pretty much will only respond to those who are genuinely interested in my project support (it does depend on the request, if you are human and all). </p>
+
+        <p>Note: Selfary and I are not responsible for inaccuracies within this website. This website is coded by me (and help from Co-pilot), but I am still a newbie. I believe I have done a lovely job thus far, but I say this mainly for people who may have mixed feelings about spending time on a website based on looks not being perfect because of the association of imperfect websites being typically not trusted. Maybe I only speak for myself. Regardless, I assure you, I am legit. </p>
+
+        <p>– Tempest –</p>
+
+    </div>
+</main>
+
+
+<!-- ===========================
+     FOOTER
+============================ -->
+<footer class="site-footer">
+    <div class="footer-inner">
+
+        <p class="footer-copy">
+            © 2025 Selfary. All rights reserved.
+        </p>
+
+    </div>
+</footer>
+
+
+<!-- ===========================
+     SCRIPTS
+============================ -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Mobile menu toggle
+    const navToggle = document.querySelector(".nav-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
+    navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+    });
+
+    // Submenu toggles
+    const submenuToggles = document.querySelectorAll(".submenu-toggle");
+
+    submenuToggles.forEach(toggle => {
+        toggle.addEventListener("click", (e) => {
+            e.preventDefault();
+            const submenu = toggle.nextElementSibling;
+            submenu.classList.toggle("open");
+        });
+    });
+
+});
+</script>
+
+</body>
+</html>
