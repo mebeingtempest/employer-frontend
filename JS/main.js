@@ -10,7 +10,7 @@
 export let allRegions = [];
 export async function initRegions() {
     try {
-        const res = await fetch('/regionsdata.json');
+        const res = await fetch('/public/regionsdata.json');
         allRegions = await res.json();
         console.log("Full Regions dataset loaded:", allRegions.length, "rows");
     } catch (err) {
@@ -22,7 +22,7 @@ export async function initRegions() {
 export let allJobsByDate = [];
 export async function initJobsByDate() {
     try {
-        const res = await fetch('/dateposteddata.json');
+        const res = await fetch('/public/dateposteddata.json');
         allJobsByDate = await res.json();
         console.log("Full Jobs-by-Date dataset loaded:", allJobsByDate.length, "rows");
     } catch (err) {
@@ -34,7 +34,7 @@ export async function initJobsByDate() {
 export let allIndustries = [];
 export async function initIndustries() {
     try {
-        const res = await fetch('/industriesdata.json');
+        const res = await fetch('/public/industriesdata.json');
         allIndustries = await res.json();
         console.log("Full Industries dataset loaded:", allIndustries.length, "rows");
     } catch (err) {
