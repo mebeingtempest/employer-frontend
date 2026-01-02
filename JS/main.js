@@ -100,3 +100,37 @@ export function renderNoResults(container) {
 export function renderError(container, message = "An error occurred.") {
     container.innerHTML = `<p class="error">${message}</p>`;
 }
+
+// ===============================
+// MOBILE NAVIGATION + SUBMENU LOGIC
+// ===============================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // -----------------------------
+    // MOBILE MENU TOGGLE
+    // -----------------------------
+    const navToggle = document.querySelector(".nav-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("open");
+        });
+    }
+
+    // -----------------------------
+    // SUBMENU TOGGLES (mobile only)
+    // -----------------------------
+    const submenuButtons = document.querySelectorAll(".submenu-toggle");
+
+    submenuButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const parent = button.closest(".has-submenu");
+            const submenu = parent.querySelector(".submenu");
+
+            submenu.classList.toggle("open");
+        });
+    });
+
+});
