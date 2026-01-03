@@ -39,6 +39,9 @@ jobs:
           CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
         run: |
           python tools/build_json_from_sql.py
+          python build_regionsdata.py
+          python build_industriesdata.py
+          python build_dateposteddata.py
 
       - name: Commit and push changes
         run: |
@@ -51,4 +54,3 @@ jobs:
             git push
           else
             echo "No changes in JSON files."
-          fi
