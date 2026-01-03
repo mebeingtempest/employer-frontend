@@ -1,6 +1,6 @@
 [
   {
-    "ID": 4,
+    "ID": 76,
     "DatePosted": "Last 3 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -8,7 +8,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 5,
+    "ID": 77,
     "DatePosted": "Last 3 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -16,23 +16,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 6,
-    "DatePosted": "Last 3 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "National Business",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 7,
-    "DatePosted": "Last 3 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "National Business",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 8,
+    "ID": 78,
     "DatePosted": "Last 3 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -40,7 +24,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 9,
+    "ID": 79,
     "DatePosted": "Last 3 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -48,23 +32,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 10,
-    "DatePosted": "Last 3 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "State Business",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 11,
-    "DatePosted": "Last 3 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "State Business",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 12,
+    "ID": 80,
     "DatePosted": "Last 3 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -72,7 +40,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 13,
+    "ID": 81,
     "DatePosted": "Last 3 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -80,23 +48,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 14,
-    "DatePosted": "Last 3 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Local Business",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 15,
-    "DatePosted": "Last 3 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Local Business",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 16,
+    "ID": 82,
     "DatePosted": "Last 3 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -104,7 +56,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 17,
+    "ID": 83,
     "DatePosted": "Last 3 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -112,23 +64,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 18,
-    "DatePosted": "Last 3 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Federal Government",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 19,
-    "DatePosted": "Last 3 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Federal Government",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 20,
+    "ID": 84,
     "DatePosted": "Last 3 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -136,7 +72,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 21,
+    "ID": 85,
     "DatePosted": "Last 3 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -144,23 +80,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 22,
-    "DatePosted": "Last 3 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "State Government",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 23,
-    "DatePosted": "Last 3 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "State Government",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 24,
+    "ID": 86,
     "DatePosted": "Last 3 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -168,7 +88,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 25,
+    "ID": 87,
     "DatePosted": "Last 3 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -176,23 +96,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 26,
-    "DatePosted": "Last 3 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Local Government",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 27,
-    "DatePosted": "Last 3 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Local Government",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 28,
+    "ID": 88,
     "DatePosted": "Last 7 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -200,7 +104,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 29,
+    "ID": 89,
     "DatePosted": "Last 7 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -208,23 +112,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 30,
-    "DatePosted": "Last 7 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "National Business",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 31,
-    "DatePosted": "Last 7 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "National Business",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 32,
+    "ID": 90,
     "DatePosted": "Last 7 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -232,7 +120,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 33,
+    "ID": 91,
     "DatePosted": "Last 7 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -240,23 +128,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 34,
-    "DatePosted": "Last 7 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "State Business",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 35,
-    "DatePosted": "Last 7 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "State Business",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 36,
+    "ID": 92,
     "DatePosted": "Last 7 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -264,7 +136,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 37,
+    "ID": 93,
     "DatePosted": "Last 7 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -272,23 +144,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 38,
-    "DatePosted": "Last 7 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Local Business",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 39,
-    "DatePosted": "Last 7 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Local Business",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 40,
+    "ID": 94,
     "DatePosted": "Last 7 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -296,7 +152,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 41,
+    "ID": 95,
     "DatePosted": "Last 7 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -304,23 +160,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 42,
-    "DatePosted": "Last 7 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Federal Government",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 43,
-    "DatePosted": "Last 7 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Federal Government",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 44,
+    "ID": 96,
     "DatePosted": "Last 7 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -328,7 +168,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 45,
+    "ID": 97,
     "DatePosted": "Last 7 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -336,23 +176,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 46,
-    "DatePosted": "Last 7 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "State Government",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 47,
-    "DatePosted": "Last 7 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "State Government",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 48,
+    "ID": 98,
     "DatePosted": "Last 7 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -360,7 +184,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 49,
+    "ID": 99,
     "DatePosted": "Last 7 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -368,23 +192,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 50,
-    "DatePosted": "Last 7 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Local Government",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 51,
-    "DatePosted": "Last 7 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Local Government",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 52,
+    "ID": 100,
     "DatePosted": "Last 14 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -392,7 +200,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 53,
+    "ID": 101,
     "DatePosted": "Last 14 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -400,23 +208,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 54,
-    "DatePosted": "Last 14 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "National Business",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 55,
-    "DatePosted": "Last 14 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "National Business",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 56,
+    "ID": 102,
     "DatePosted": "Last 14 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -424,7 +216,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 57,
+    "ID": 103,
     "DatePosted": "Last 14 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -432,23 +224,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 58,
-    "DatePosted": "Last 14 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "State Business",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 59,
-    "DatePosted": "Last 14 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "State Business",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 60,
+    "ID": 104,
     "DatePosted": "Last 14 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -456,7 +232,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 61,
+    "ID": 105,
     "DatePosted": "Last 14 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -464,23 +240,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 62,
-    "DatePosted": "Last 14 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Local Business",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 63,
-    "DatePosted": "Last 14 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Local Business",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 64,
+    "ID": 106,
     "DatePosted": "Last 14 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -488,7 +248,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 65,
+    "ID": 107,
     "DatePosted": "Last 14 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -496,23 +256,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 66,
-    "DatePosted": "Last 14 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Federal Government",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 67,
-    "DatePosted": "Last 14 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Federal Government",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 68,
+    "ID": 108,
     "DatePosted": "Last 14 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -520,7 +264,7 @@
     "Type": "Permanent"
   },
   {
-    "ID": 69,
+    "ID": 109,
     "DatePosted": "Last 14 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -528,23 +272,7 @@
     "Type": "Temporary"
   },
   {
-    "ID": 70,
-    "DatePosted": "Last 14 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "State Government",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 71,
-    "DatePosted": "Last 14 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "State Government",
-    "Type": "Seasonal"
-  },
-  {
-    "ID": 72,
+    "ID": 110,
     "DatePosted": "Last 14 Days",
     "EmployerLink": null,
     "EmployerName": null,
@@ -552,27 +280,11 @@
     "Type": "Permanent"
   },
   {
-    "ID": 73,
+    "ID": 111,
     "DatePosted": "Last 14 Days",
     "EmployerLink": null,
     "EmployerName": null,
     "Scale": "Local Government",
     "Type": "Temporary"
-  },
-  {
-    "ID": 74,
-    "DatePosted": "Last 14 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Local Government",
-    "Type": "Contracting"
-  },
-  {
-    "ID": 75,
-    "DatePosted": "Last 14 Days",
-    "EmployerLink": null,
-    "EmployerName": null,
-    "Scale": "Local Government",
-    "Type": "Seasonal"
   }
 ]
